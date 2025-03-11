@@ -72,7 +72,8 @@ nav ul li a:hover {
 }
 
 .hero h1 {
-  font-size: 40px;
+  color: #242424;
+  font-size: 35px;
   margin-bottom: 20px;
 }
 
@@ -103,6 +104,15 @@ nav ul li a:hover {
   width: 40px;
   height: 40px;
   cursor: pointer;
+}
+
+.hero-logo-text {
+  font-family: "Fredoka", sans-serif;
+  font-size: 64px;
+  font-weight: 500; /* mais fina que bold */
+  margin-bottom: 20px;
+  color: #000;
+  text-align: center;
 }
 
 .categorias {
@@ -144,31 +154,67 @@ nav ul li a:hover {
 footer {
   background-color: #000;
   color: #fff;
-  text-align: center;
-  padding: 20px 0;
-  margin-top: 40px;
-  font-size: 14px;
+  padding: 40px 0;
+  position: relative;
+  overflow: hidden;
 }
 
-footer .container p {
+.footer-container {
+  width: 85%;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+}
+
+.footer-top {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 8px;
-  font-size: 14px;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #444;
 }
 
-footer p {
-  font-size: 14px;
+.footer-social a img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  margin-right: 15px;
+}
+
+.footer-links {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-footer p span {
-  color: #e25555; /* vermelho claro, opcional */
-  font-size: 16px;
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+/* Texto gigante no fundo do rodapé */
+.footer-big-text {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Fredoka", sans-serif;
+  font-size: 350px; /* Ajuste para maior ou menor conforme seu gosto */
+  color: rgba(255, 255, 255, 0.05); /* bem transparente */
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
 }
 
 .produtos-mais-vendidos {
@@ -211,4 +257,49 @@ footer p span {
 
 .produto strong {
   color: #333;
+}
+
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+}
+
+.whatsapp-float img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.whatsapp-float:hover img {
+  transform: scale(1.1);
+}
+
+/* Balão de texto acima do botão */
+.tooltip-whatsapp {
+  visibility: hidden;
+  position: absolute;
+  bottom: 95px; /* ajusta altura acima do botão */
+  right: 0;
+  background-color: #25d366; /* cor do WhatsApp */
+  color: white;
+  text-align: center;
+  border-radius: 25px;
+  padding: 8px 15px;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  white-space: nowrap;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.whatsapp-float:hover .tooltip-whatsapp {
+  visibility: visible;
+  opacity: 1;
 }
