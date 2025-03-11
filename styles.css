@@ -17,15 +17,26 @@ body {
 }
 
 header {
-  background-color: #000;
-  color: #fff;
+  background-color: #000; /* Fundo preto */
   padding: 15px 0;
+  border-bottom: none; /* sem borda */
 }
 
 header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+/* Ajuste apenas o tamanho da logo no topo (header) */
+header .logo img {
+  width: 80px; /* ajuste o tamanho desejado aqui */
+  height: auto;
+}
+
+.logo img {
+  width: 120px; /* ajuste de acordo com sua imagem */
+  height: auto;
 }
 
 .logo {
@@ -40,18 +51,24 @@ nav ul {
 }
 
 nav ul li a {
-  color: #fff;
+  color: #fff; /* Links brancos */
   text-decoration: none;
-  font-size: 16px;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
 }
 
 nav ul li a:hover {
-  text-decoration: underline;
+  color: #ddd;
 }
 
 .hero {
   text-align: center;
-  padding: 60px 0;
+  padding: 80px 0;
+}
+
+.hero-logo {
+  width: 250px; /* ajuste esse valor para tamanho ideal */
+  margin-bottom: 20px;
 }
 
 .hero h1 {
@@ -100,13 +117,14 @@ nav ul li a:hover {
 
 .categoria-itens {
   display: flex;
-  gap: 30px; /* mais espaçamento entre itens */
-  overflow-x: auto;
-  padding-bottom: 20px;
+  justify-content: space-between; /* Alinha melhor horizontalmente */
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Permite quebrar linha caso necessário */
 }
 
 .categoria-itens .item {
-  min-width: 200px; /* itens mais largos */
+  flex: 1;
   text-align: center;
 }
 
@@ -132,6 +150,27 @@ footer {
   font-size: 14px;
 }
 
+footer .container p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+footer p {
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+footer p span {
+  color: #e25555; /* vermelho claro, opcional */
+  font-size: 16px;
+}
+
 .produtos-mais-vendidos {
   padding: 60px 0;
 }
@@ -143,8 +182,11 @@ footer {
 
 .produtos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(200px, 1fr)
+  ); /* ajustar colunas iguais às categorias */
+  gap: 20px;
 }
 
 .produto img {
